@@ -1,4 +1,4 @@
-import { render, screen, prettyDOM, getByText, fireEvent } from '@testing-library/react';
+import { render, screen, prettyDOM, within, fireEvent, getAllByRole } from '@testing-library/react';
 import App from "App";
 
 describe("App", () => {
@@ -40,7 +40,7 @@ describe("App", () => {
     render(<App />);
 
     const users = screen.getByRole("list");
-    
+
     const list = screen.queryAllByTestId("user");
     expect(list).toBeTruthy();
     expect(list.length).toEqual(0);
@@ -61,6 +61,7 @@ describe("App", () => {
     expect(list.length).toEqual(4);
   });
 
+  // Using Relative search
   it('clicks Load and checks if list has specific items', () => {
     render(<App />);
 
@@ -68,16 +69,21 @@ describe("App", () => {
 
     fireEvent.click(button);
 
-    // // const user = screen.getByTestId("users");
-    // const list = screen.queryAllByTestId("user");
-    const list = screen.queryAllByRole("listitem");
-    expect(list).toBeTruthy();
+    // Search for list by Role
     const users = screen.getByRole("list");
-    console.log(prettyDOM(users));
 
-    const items = list.map(item => item.innerHTML);
+    // find the listItems inside this list. Preferred pattern
+    const listItems = within(users).queryAllByRole("listitem");
 
-    expect(list.length).toEqual(4);
+    // can do this, but it doesn't like it!
+    // const listItems = getAllByRole(users, "listitem");
+
+    expect(listItems).toBeTruthy();
+    // console.log(prettyDOM(users));
+
+    const items = listItems.map(item => item.innerHTML);
+
+    expect(listItems.length).toEqual(4);
     expect(items).toEqual(["Alice", "Bob", "Kira", "Mallory"]);
   });
 
