@@ -11,7 +11,6 @@ const testData = [
   { id: 4, name: "Mallory" },
 ];
 
-
 function App() {
   const [count, setCount] = useState(0);
   const [data, setData] = useState([]);

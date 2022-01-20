@@ -11,8 +11,8 @@ const Counter = function(props) {
   };
 
   return (
-    <div className="counter">
-      <span>{props.count}</span>
+    <div className="counter" data-testid="counter">
+      <span  data-testid="count">{props.count}</span>
       <button onClick={decrement}>-</button>
       <button onClick={clear}>0</button>
       <button onClick={increment}>+</button>
