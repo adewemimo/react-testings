@@ -2,6 +2,7 @@ import { useState } from 'react';
 import Header from './components/Header';
 import Counter from './components/Counter';
 import './App.css';
+import Footer from 'components/Footer';
 
 const testData = [
   { id: 1, name: "Alice" },
@@ -45,13 +46,11 @@ function App() {
         increment={increment}
         decrement={decrement}
         clear={clear} />
+        
+      <Footer count={count}></Footer>
 
-      <p>
-        The current count is: {count}
-      </p>
-
-      <button onClick={show}>Show Users</button>
-      <button onClick={hide}>Hide Users</button>
+      <button onClick={show}>Load Users</button>
+      <button onClick={hide}>Clear Users</button>
 
       <ul data-testid="users">
         {list}
