@@ -3,21 +3,20 @@ import App from "App";
 
 describe("App", () => {
 
-  it.skip('renders App without crashing', () => {
+  it('renders App without crashing', () => {
     render(<App />);
   });
 
-  it.skip('renders the header properly', () => {
+  it('renders the header properly', () => {
     const { container } = render(<App />);
-    console.log(prettyDOM(container));
-    
+    // console.log(prettyDOM(container));
+
     const text = screen.getByText("Hello React");
     expect(text).toBeInTheDocument();
   });
 
   it('finds the Counter', () => {
     render(<App />);
-    // console.log(prettyDOM(container));
 
     const counter = screen.getByTestId("counter");
 
