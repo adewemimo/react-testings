@@ -19,12 +19,10 @@ https://testing-library.com/docs/react-testing-library/cheatsheet/
 - [ ] Assert results are what we expect
 - [ ] * Search
 - [ ] Get by text.  Common
-- [ ] Expand Screen
 - [ ] Findby vs findallby
 - [ ] GetBy & GetAllBy
 - [ ] QueryBy & QueryAllBy
 - [ ] Most of the time we use Get and Query
-- [ ] Show chart
 - [ ] GeyBy - match 1 element, error if not
 - [ ] GetAll - match multiple
 - [ ] What about async?
@@ -34,7 +32,7 @@ https://testing-library.com/docs/react-testing-library/cheatsheet/
 - [ ] What search should  use?
 - [ ] Try to prioritize by user experience
 - [ ] Mimic what the user would see
-- [ ] Show priority chart
+- [ ] Priority chart online
 - [ ] *Using query methods
 - [ ] Testing a simple component. Header
 - [ ] Show component
